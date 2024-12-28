@@ -4,8 +4,7 @@ edit_uri: edit/main/docs/
 nav:
   - Getting started:
       - Installation: index.md
-  - Contribute: install.md
-  - Account: account.md
+      - Contribute: install.md
 theme:
   name: material
   icon:
