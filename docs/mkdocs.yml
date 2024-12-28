@@ -3,13 +3,13 @@ repo_url: https://github.com/hlvm-app/hasta-la-vista-money.git
 edit_uri: edit/main/docs/
 nav:
   - Setup: index.md
-  - Вклад в проект: install.md
-  - Раздел со счетами: account.md
+  - Contribute: install.md
+  - Account: account.md
 theme:
   name: material
   icon:
     repo: fontawesome/brands/github
-  language: ru
+  language: en
   palette:
 
     # Palette toggle for automatic mode
@@ -35,6 +35,8 @@ theme:
 
 
 plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - mkdocstrings:
       handlers:
         python:
@@ -45,4 +47,4 @@ plugins:
 
 copyright: '© Alexander Pavlov 2022-2024'
 site_author: 'Alexander Pavlov'
-site_description: 'Hasta La Vista, Money!'
+site_description: 'Navigation:'
