@@ -8,7 +8,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11.2"
+python = "^3.12.8"
 python-dotenv = "^1.0.0"
 dj-database-url = "^2.1.0"
 psycopg2-binary = "^2.9.3"
@@ -36,7 +36,6 @@ djangorestframework = "^3.15.0"
 Faker = "^13.7.0"
 coverage = "^7.3.2"
 myst-parser = "^2.0.0"
-black = "^24.3.0"
 flower = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
@@ -77,26 +76,3 @@ plugins = ['mypy_django_plugin.main']
 
 [tool.django-stubs]
 django_settings_module = 'config.django.base'
-
-[tool.black]
-line-length = 80
-skip-string-normalization = true
-exclude = '''
-(
-  /(
-    | \.git
-    | \.mypy_cache
-    | \.venv
-    | _build
-    | build
-    | dist
-    | migrations/.*
-    /(
-      | migrations
-    )/
-    /(
-        | bootstrap
-    )
-  )/
-)
-'''
