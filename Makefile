@@ -65,7 +65,7 @@ start:
 
 .PHONY: secretkey
 secretkey:
-		@poetry run python -c 'from django.utils.crypto import get_random_string; print(get_random_string(40))'
+		@poetry run python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 
 .PHONY: test
 test:
