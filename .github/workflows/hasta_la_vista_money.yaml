@@ -67,6 +67,9 @@ jobs:
 
       - name: Run Tests
         run: make test
+        with:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DATABASE_URL: postgres://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@${{ secrets.POSTGRES_HOST }}:${{ secrets.POSTGRES_PORT }}/${{ secrets.POSTGRES_DB }}
 
       - name: Run coverage
         run: coverage xml
