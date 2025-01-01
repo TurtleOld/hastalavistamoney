@@ -57,13 +57,13 @@ jobs:
 
       # run makemigrations and migrate
       - name: Run makemigrations
-        run: python manage.py makemigrations
+        run: poetry run python manage.py makemigrations
 
       - name: Run check
-        run: python manage.py check
+        run: poetry run python manage.py check
 
       - name: Run migrations
-        run: python manage.py migrate
+        run: poetry run python manage.py migrate
 
       - name: Run Tests
         run: make test
@@ -72,7 +72,7 @@ jobs:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/github_actions
 
       - name: Run coverage
-        run: coverage xml
+        run: poetry run coverage xml
 
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
