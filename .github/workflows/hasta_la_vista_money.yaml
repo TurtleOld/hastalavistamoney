@@ -42,7 +42,10 @@ jobs:
         with:
           python-version: '3.12.7'
           fetch-depth: 0
-
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          api-token: ${{ secrets.CODACY_API_TOKEN }}
       - uses: chartboost/ruff-action@v1
         with:
           changed-files: 'true'
