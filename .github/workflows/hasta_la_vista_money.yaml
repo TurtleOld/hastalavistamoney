@@ -42,11 +42,6 @@ jobs:
         with:
           python-version: '3.12.7'
           fetch-depth: 0
-      - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@v1.3.0
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: 'report.xml'
       - uses: chartboost/ruff-action@v1
         with:
           changed-files: 'true'
@@ -70,13 +65,14 @@ jobs:
       - name: Run migrations
         run: python manage.py migrate
 
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.COVERAGE_ID_APPLICATION }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          TOKEN_TELEGRAM_BOT: ${{ secrets.TOKEN_TELEGRAM_BOT }}
-          ID_GROUP_USER: ${{ secrets.ID_GROUP_USER }}
+      - name: Run Tests
+        run: make test
+
+      - name: Run coverage
+        run: coverage xml
+
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
-          coverageCommand: make coverage
-          debug: true
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: 'coverage.xml'
