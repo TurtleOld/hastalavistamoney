@@ -10,6 +10,9 @@ Hasta La Vista, Money!
    :target: https://app.codacy.com/gh/TurtleOld/hasta-la-vista-money/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
    :alt: Codacy Badge
 
+.. image:: https://app.codacy.com/project/badge/Coverage/5281be8b483c4c7d8576bdf0ad15d94d
+   :target: https://app.codacy.com/gh/TurtleOld/hasta-la-vista-money/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage
+
 .. image:: https://sloc.xyz/github/hlvm-app/hasta-la-vista-money/?category=code
    :target: https://sloc.xyz/github/hlvm-app/hasta-la-vista-money/?category=code
    :alt: Lines of code
