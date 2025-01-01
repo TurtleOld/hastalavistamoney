@@ -69,7 +69,7 @@ jobs:
         run: make test
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DATABASE_URL: postgres://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@${{ secrets.POSTGRES_HOST }}:${{ secrets.POSTGRES_PORT }}/${{ secrets.POSTGRES_DB }}
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/github_actions
 
       - name: Run coverage
         run: coverage xml
