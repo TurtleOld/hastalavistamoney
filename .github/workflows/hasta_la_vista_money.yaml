@@ -73,6 +73,9 @@ jobs:
 
       - name: Run Tests with Coverage
         run: make coverage
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/github_actions
 
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
