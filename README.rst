@@ -6,17 +6,9 @@ Hasta La Vista, Money!
 .. image:: https://img.shields.io/github/actions/workflow/status/hlvm-app/hasta-la-vista-money/hasta_la_vista_money.yaml?label=Hasta%20La%20Vista%2C%20Money%21
    :alt: GitHub Workflow Status
 
-.. image:: https://api.codeclimate.com/v1/badges/cbd04aad36a00366e9ca/maintainability
-   :target: https://codeclimate.com/github/TurtleOld/hasta-la-vista-money/maintainability
-   :alt: Maintainability
-
-.. image:: https://api.codeclimate.com/v1/badges/cbd04aad36a00366e9ca/test_coverage
-   :target: https://codeclimate.com/github/TurtleOld/hasta-la-vista-money/test_coverage
-   :alt: Test Coverage
-
-.. image:: https://www.codefactor.io/repository/github/hlvm-app/hasta-la-vista-money/badge
-   :target: https://www.codefactor.io/repository/github/hlvm-app/hasta-la-vista-money
-   :alt: CodeFactor
+.. image:: https://app.codacy.com/project/badge/Grade/5281be8b483c4c7d8576bdf0ad15d94d
+   :target: https://app.codacy.com/gh/TurtleOld/hasta-la-vista-money/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
+   :alt: Codacy Badge
 
 .. image:: https://sloc.xyz/github/hlvm-app/hasta-la-vista-money/?category=code
    :target: https://sloc.xyz/github/hlvm-app/hasta-la-vista-money/?category=code
@@ -37,7 +29,8 @@ Hasta La Vista, Money!
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hasta La Vista, Money - это проект домашней бухгалтерии, разрабатываемый для эффективного контроля над расходами и доходами семьи. Помимо этого, приложение обеспечивает удобный ввод данных о покупках, позволяя пользователям сканировать QR-коды с чеков передавая информацию с помощью мобильного приложения (Android) или вносить информацию вручную.
+Hasta La Vista, Money - это проект домашней бухгалтерии, разрабатываемый для эффективного контроля над расходами и доходами семьи. Помимо этого, приложение обеспечивает удобный ввод данных о покупках, позволяя пользователям вносить информацию вручную.
+Мобильное приложение для Android для сканирования QR-кодов с чеков находится в разработке.
 
 Этот проект позиционируется как self-hosted и его можно будет устанавливать на свой хостинг. Данная функция в разработке.
 
