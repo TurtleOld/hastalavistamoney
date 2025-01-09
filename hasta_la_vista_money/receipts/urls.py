@@ -18,9 +18,9 @@ urlpatterns = [
     path('', ReceiptView.as_view(), name='list'),
     path('create/', ReceiptCreateView.as_view(), name='create'),
     path(
-        'create_customer/',
+        'create_seller/',
         SellerCreateView.as_view(),
-        name='create_customer',
+        name='create_seller',
     ),
     path('<int:pk>/', ReceiptDeleteView.as_view(), name='delete'),
     path(

@@ -14,7 +14,7 @@
             </div>
             <div class="modal-body">
                 <form class="ajax-form m-2" method="POST"
-                      action="{% url 'receipts:create_customer' %}">
+                      action="{% url 'receipts:create_seller' %}">
                     {% csrf_token %}
                     {% if seller_form %}
                         {% for field in seller_form %}

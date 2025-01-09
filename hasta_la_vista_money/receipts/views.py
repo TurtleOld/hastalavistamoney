@@ -105,9 +105,9 @@ class SellerCreateView(SuccessMessageMixin, BaseView, CreateView):
     def post(self, request, *args, **kwargs):
         seller_form = SellerForm(request.POST)
         if seller_form.is_valid():
-            customer = seller_form.save(commit=False)
-            customer.user = request.user
-            customer.save()
+            seller = seller_form.save(commit=False)
+            seller.user = request.user
+            seller.save()
             messages.success(
                 self.request,
                 constants.SUCCESS_MESSAGE_CREATE_SELLER,

@@ -7,9 +7,9 @@
            aria-label="table expense">
         <thead>
         <tr>
-            <th class="col-1">{% translate 'Категория' %}</th>
             <th class="col-1">{% translate 'Дата' %}</th>
             <th class="col-1">{% translate 'Сумма' %}</th>
+            <th class="col-1">{% translate 'Категория' %}</th>
             <th class="col-1">{% translate 'Счёт' %}</th>
             <th class="col-1">
                 <button type="button" class="btn btn-outline-success"
@@ -39,11 +39,11 @@
         <tbody>
         {% for expense in expenses %}
             <tr>
+                <td title="{{ expense.date }}">{{ expense.date | date:'F Y' }}</td>
+                <td class="text-nowrap">{{ expense.amount | comma }}</td>
                 <td>{% if expense.category__parent_category__name %}
                     <strong>{{ expense.category__parent_category__name }}</strong>
                     \ {% endif %}{{ expense.category__name }}</td>
-                <td title="{{ expense.date }}">{{ expense.date | date:'F Y' }}</td>
-                <td class="text-nowrap">{{ expense.amount | comma }}</td>
                 <td>{{ expense.account__name_account }}</td>
                 <td>
                     <div class="table-buttons">
