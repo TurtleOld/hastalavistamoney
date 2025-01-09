@@ -8,25 +8,25 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("expense", "0021_alter_expense_user_alter_expensecategory_user"),
+        ('expense', '0021_alter_expense_user_alter_expensecategory_user'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="expense",
-            name="user",
+            model_name='expense',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="expense_users",
+                related_name='expense_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="expensecategory",
-            name="user",
+            model_name='expensecategory',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="category_expense_users",
+                related_name='category_expense_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

@@ -7,21 +7,21 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         (
-            "expense",
-            "0017_remove_expensecategory_parent_category_self_and_more",
+            'expense',
+            '0017_remove_expensecategory_parent_category_self_and_more',
         ),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="expensecategory",
-            name="parent_category",
+            model_name='expensecategory',
+            name='parent_category',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="subcategories",
-                to="expense.expensecategory",
+                related_name='subcategories',
+                to='expense.expensecategory',
             ),
         ),
     ]

@@ -5,11 +5,11 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0005_paymentmakeloan_date"),
+        ('loan', '0005_paymentmakeloan_date'),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name="PaymentMakeLoan",
+            name='PaymentMakeLoan',
         ),
     ]

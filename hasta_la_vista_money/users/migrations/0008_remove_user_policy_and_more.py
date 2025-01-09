@@ -7,62 +7,62 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0029_alter_account_user_alter_transfermoneylog_user"),
-        ("users", "0007_alter_user_policy"),
+        ('account', '0029_alter_account_user_alter_transfermoneylog_user'),
+        ('users', '0007_alter_user_policy'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="user",
-            name="policy",
+            model_name='user',
+            name='policy',
         ),
         migrations.AlterField(
-            model_name="telegramuser",
-            name="selected_account",
+            model_name='telegramuser',
+            name='selected_account',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.SET_NULL,
-                related_name="selected_account_telegram_users",
-                to="account.account",
+                related_name='selected_account_telegram_users',
+                to='account.account',
             ),
         ),
         migrations.AlterField(
-            model_name="telegramuser",
-            name="user",
+            model_name='telegramuser',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="telegram_users",
+                related_name='telegram_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.CreateModel(
-            name="SelectedAccount",
+            name='SelectedAccount',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
                 (
-                    "name",
+                    'name',
                     models.ForeignKey(
                         blank=True,
                         null=True,
                         on_delete=django.db.models.deletion.SET_NULL,
-                        related_name="selected_account_name",
-                        to="account.account",
+                        related_name='selected_account_name',
+                        to='account.account',
                     ),
                 ),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="selected_account_users",
+                        related_name='selected_account_users',
                         to=settings.AUTH_USER_MODEL,
                     ),
                 ),

@@ -6,20 +6,20 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         (
-            "receipts",
-            "0011_alter_customer_user_alter_product_product_name_and_more",
+            'receipts',
+            '0011_alter_customer_user_alter_product_product_name_and_more',
         ),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="product",
-            name="quantity",
+            model_name='product',
+            name='quantity',
             field=models.DecimalField(
                 decimal_places=2,
                 default=0,
                 max_digits=10,
-                verbose_name="Количество",
+                verbose_name='Количество',
             ),
         ),
     ]

@@ -5,18 +5,18 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("receipts", "0007_receipt_nds_10_receipt_nds_20"),
+        ('receipts', '0007_receipt_nds_10_receipt_nds_20'),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name="receipt",
-            old_name="nds_10",
-            new_name="nds10",
+            model_name='receipt',
+            old_name='nds_10',
+            new_name='nds10',
         ),
         migrations.RenameField(
-            model_name="receipt",
-            old_name="nds_20",
-            new_name="nds20",
+            model_name='receipt',
+            old_name='nds_20',
+            new_name='nds20',
         ),
     ]

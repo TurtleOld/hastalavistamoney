@@ -5,31 +5,30 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ("account", "0029_alter_account_user_alter_transfermoneylog_user"),
-        ("receipts", "0016_alter_customer_user_alter_product_user_and_more"),
+        ('account', '0029_alter_account_user_alter_transfermoneylog_user'),
+        ('receipts', '0016_alter_customer_user_alter_product_user_and_more'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="FileUpload",
+            name='FileUpload',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("file", models.FileField(upload_to="media/")),
+                ('file', models.FileField(upload_to='media/')),
                 (
-                    "account",
+                    'account',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="account.account",
+                        to='account.account',
                     ),
                 ),
             ],

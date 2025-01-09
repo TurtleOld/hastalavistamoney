@@ -9,73 +9,73 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         (
-            "account",
-            "0011_alter_transfermoneylog_options_alter_account_user_and_more",
+            'account',
+            '0011_alter_transfermoneylog_options_alter_account_user_and_more',
         ),
-        ("loan", "0018_paymentschedule"),
+        ('loan', '0018_paymentschedule'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="loan",
-            name="account",
+            model_name='loan',
+            name='account',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="loan_accounts",
-                to="account.account",
+                related_name='loan_accounts',
+                to='account.account',
             ),
         ),
         migrations.AlterField(
-            model_name="loan",
-            name="user",
+            model_name='loan',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="loan_users",
+                related_name='loan_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="paymentmakeloan",
-            name="account",
+            model_name='paymentmakeloan',
+            name='account',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="payment_make_loan_accounts",
-                to="account.account",
+                related_name='payment_make_loan_accounts',
+                to='account.account',
             ),
         ),
         migrations.AlterField(
-            model_name="paymentmakeloan",
-            name="loan",
+            model_name='paymentmakeloan',
+            name='loan',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="loans",
-                to="loan.loan",
+                related_name='loans',
+                to='loan.loan',
             ),
         ),
         migrations.AlterField(
-            model_name="paymentmakeloan",
-            name="user",
+            model_name='paymentmakeloan',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="payment_make_loan_users",
+                related_name='payment_make_loan_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="paymentschedule",
-            name="loan",
+            model_name='paymentschedule',
+            name='loan',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="payment_schedule_loans",
-                to="loan.loan",
+                related_name='payment_schedule_loans',
+                to='loan.loan',
             ),
         ),
         migrations.AlterField(
-            model_name="paymentschedule",
-            name="user",
+            model_name='paymentschedule',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="payment_schedule_users",
+                related_name='payment_schedule_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

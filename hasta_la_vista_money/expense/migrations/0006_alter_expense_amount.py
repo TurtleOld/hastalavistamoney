@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("expense", "0005_alter_expense_amount"),
+        ('expense', '0005_alter_expense_amount'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="expense",
-            name="amount",
+            model_name='expense',
+            name='amount',
             field=models.DecimalField(decimal_places=2, max_digits=20),
         ),
     ]

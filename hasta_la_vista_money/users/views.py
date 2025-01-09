@@ -77,10 +77,11 @@ class LoginUser(SuccessMessageMixin, LoginView):
         return self.form_invalid(form)
 
     def form_invalid(self, form):
-        messages.error(
-            self.request,
-            form.errors['__all__'][0],
-        )
+        if form.errors:
+            messages.error(
+                self.request,
+                list(form.errors.values())[0][0],
+            )
         return super().form_invalid(form)
 
 

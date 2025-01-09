@@ -10,25 +10,25 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("account", "0005_alter_transfermoneylog_from_account_and_more"),
+        ('account', '0005_alter_transfermoneylog_from_account_and_more'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="Category",
+            name='Category',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("name", models.CharField(max_length=250)),
+                ('name', models.CharField(max_length=250)),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
                         to=settings.AUTH_USER_MODEL,
@@ -37,43 +37,43 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name="Loan",
+            name='Loan',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("date", models.DateTimeField()),
-                ("loan_amount", models.FloatField(max_length=250)),
+                ('date', models.DateTimeField()),
+                ('loan_amount', models.FloatField(max_length=250)),
                 (
-                    "annual_interest_rate",
+                    'annual_interest_rate',
                     models.DecimalField(decimal_places=2, max_digits=250),
                 ),
                 (
-                    "period_loan",
+                    'period_loan',
                     models.DecimalField(decimal_places=2, max_digits=250),
                 ),
                 (
-                    "account",
+                    'account',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        to="account.account",
+                        to='account.account',
                     ),
                 ),
                 (
-                    "category",
+                    'category',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        to="loan.category",
+                        to='loan.category',
                     ),
                 ),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
                         to=settings.AUTH_USER_MODEL,

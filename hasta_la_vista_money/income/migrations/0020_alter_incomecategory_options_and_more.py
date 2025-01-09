@@ -6,23 +6,23 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("income", "0019_incomecategory_parent_category"),
+        ('income', '0019_incomecategory_parent_category'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="incomecategory",
-            options={"ordering": ["parent_category_id"]},
+            name='incomecategory',
+            options={'ordering': ['parent_category_id']},
         ),
         migrations.AlterField(
-            model_name="incomecategory",
-            name="parent_category",
+            model_name='incomecategory',
+            name='parent_category',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.SET_NULL,
-                related_name="subcategories",
-                to="income.incomecategory",
+                related_name='subcategories',
+                to='income.incomecategory',
             ),
         ),
     ]

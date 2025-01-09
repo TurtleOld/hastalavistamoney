@@ -5,14 +5,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0004_paymentmakeloan"),
+        ('loan', '0004_paymentmakeloan'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="paymentmakeloan",
-            name="date",
-            field=models.DateTimeField(default="2023-07-10 22:12:29.000 +0300"),
+            model_name='paymentmakeloan',
+            name='date',
+            field=models.DateTimeField(default='2023-07-10 22:12:29.000 +0300'),
             preserve_default=False,
         ),
     ]

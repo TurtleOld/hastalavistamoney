@@ -9,46 +9,46 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         (
-            "account",
-            "0011_alter_transfermoneylog_options_alter_account_user_and_more",
+            'account',
+            '0011_alter_transfermoneylog_options_alter_account_user_and_more',
         ),
-        ("income", "0007_alter_income_amount"),
+        ('income', '0007_alter_income_amount'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="income",
-            name="account",
+            model_name='income',
+            name='account',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="income_accounts",
-                to="account.account",
+                related_name='income_accounts',
+                to='account.account',
             ),
         ),
         migrations.AlterField(
-            model_name="income",
-            name="category",
+            model_name='income',
+            name='category',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="income_categories",
-                to="income.incometype",
+                related_name='income_categories',
+                to='income.incometype',
             ),
         ),
         migrations.AlterField(
-            model_name="income",
-            name="user",
+            model_name='income',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="income_users",
+                related_name='income_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="incometype",
-            name="user",
+            model_name='incometype',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="income_type",
+                related_name='income_type',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

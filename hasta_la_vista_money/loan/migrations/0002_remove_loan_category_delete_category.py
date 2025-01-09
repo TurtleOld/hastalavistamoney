@@ -5,15 +5,15 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0001_initial"),
+        ('loan', '0001_initial'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="loan",
-            name="category",
+            model_name='loan',
+            name='category',
         ),
         migrations.DeleteModel(
-            name="Category",
+            name='Category',
         ),
     ]

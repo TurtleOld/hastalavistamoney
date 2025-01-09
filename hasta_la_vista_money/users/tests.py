@@ -41,3 +41,48 @@ class TestUser(TestCase):
 
         response = self.client.post(url, new_user, follow=True)
         self.assertRedirects(response, '/hasta-la-vista-money/')
+
+    def test_login_user_success(self):
+        self.client.force_login(self.user1)
+
+        user = User.objects.get(username=self.user1)
+        self.assertTrue(user.is_authenticated)
+
+    def test_login_user_invalid_credentials(self):
+        url = reverse_lazy('login')
+        response = self.client.post(
+            url,
+            {
+                'username': 'testuser',
+                'password': 'wrongpassword',
+            },
+        )
+
+        self.assertEqual(response.status_code, constants.SUCCESS_CODE)
+
+        messages_list = list(response.wsgi_request._messages)
+        self.assertEqual(len(messages_list), 1)
+        self.assertEqual(
+            str(messages_list[0]),
+            'Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут быть чувствительны к регистру.',
+        )
+
+        self.assertFalse(response.wsgi_request.user.is_authenticated)
+
+    def test_login_user_empty_fields(self):
+        url = reverse_lazy('login')
+        response = self.client.post(
+            url,
+            {
+                'username': '',
+                'password': '',
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+
+        messages_list = list(response.wsgi_request._messages)
+        self.assertEqual(len(messages_list), 1)
+        self.assertIn('Обязательное поле.', str(messages_list[0]))
+
+        self.assertFalse(response.wsgi_request.user.is_authenticated)

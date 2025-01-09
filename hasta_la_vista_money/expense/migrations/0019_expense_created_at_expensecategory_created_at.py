@@ -5,22 +5,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("expense", "0018_alter_expensecategory_parent_category"),
+        ('expense', '0018_alter_expensecategory_parent_category'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="expense",
-            name="created_at",
+            model_name='expense',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
         migrations.AddField(
-            model_name="expensecategory",
-            name="created_at",
+            model_name='expensecategory',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
     ]

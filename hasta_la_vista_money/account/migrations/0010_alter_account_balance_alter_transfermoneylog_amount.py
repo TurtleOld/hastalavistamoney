@@ -5,20 +5,18 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0009_account_account_acc_name_ac_e74e62_idx"),
+        ('account', '0009_account_account_acc_name_ac_e74e62_idx'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="account",
-            name="balance",
-            field=models.DecimalField(
-                decimal_places=2, default=0, max_digits=20
-            ),
+            model_name='account',
+            name='balance',
+            field=models.DecimalField(decimal_places=2, default=0, max_digits=20),
         ),
         migrations.AlterField(
-            model_name="transfermoneylog",
-            name="amount",
+            model_name='transfermoneylog',
+            name='amount',
             field=models.DecimalField(decimal_places=2, max_digits=20),
         ),
     ]

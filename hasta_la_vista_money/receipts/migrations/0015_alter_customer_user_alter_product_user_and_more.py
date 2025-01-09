@@ -6,37 +6,36 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("receipts", "0014_alter_customer_user_alter_product_user_and_more"),
+        ('receipts', '0014_alter_customer_user_alter_product_user_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="customer",
-            name="user",
+            model_name='customer',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="customer_users",
+                related_name='customer_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="product",
-            name="user",
+            model_name='product',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="product_users",
+                related_name='product_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="receipt",
-            name="user",
+            model_name='receipt',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="receipt_users",
+                related_name='receipt_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

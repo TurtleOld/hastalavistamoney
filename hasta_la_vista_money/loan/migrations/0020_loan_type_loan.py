@@ -5,19 +5,19 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0019_alter_loan_account_alter_loan_user_and_more"),
+        ('loan', '0019_alter_loan_account_alter_loan_user_and_more'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="loan",
-            name="type_loan",
+            model_name='loan',
+            name='type_loan',
             field=models.CharField(
                 choices=[
-                    ("Annuity", "Аннуитетный"),
-                    ("Differentiated", "Дифференцированный"),
+                    ('Annuity', 'Аннуитетный'),
+                    ('Differentiated', 'Дифференцированный'),
                 ],
-                default="Annuity",
+                default='Annuity',
             ),
         ),
     ]

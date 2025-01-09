@@ -5,14 +5,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0006_alter_account_options"),
+        ('account', '0006_alter_account_options'),
     ]
 
     operations = [
         migrations.AddIndex(
-            model_name="account",
+            model_name='account',
             index=models.Index(
-                fields=["name_account"], name="account_acc_name_ac_e74e62_idx"
+                fields=['name_account'], name='account_acc_name_ac_e74e62_idx'
             ),
         ),
     ]

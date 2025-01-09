@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("receipts", "0006_alter_receipt_operation_type"),
+        ('receipts', '0006_alter_receipt_operation_type'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="receipt",
-            name="nds_10",
+            model_name='receipt',
+            name='nds_10',
             field=models.DecimalField(
                 blank=True,
                 decimal_places=2,
@@ -20,8 +20,8 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AddField(
-            model_name="receipt",
-            name="nds_20",
+            model_name='receipt',
+            name='nds_20',
             field=models.DecimalField(
                 blank=True,
                 decimal_places=2,

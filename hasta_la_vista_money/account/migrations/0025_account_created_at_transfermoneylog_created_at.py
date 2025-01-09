@@ -5,22 +5,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0024_transfermoneylog_user"),
+        ('account', '0024_transfermoneylog_user'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="account",
-            name="created_at",
+            model_name='account',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
         migrations.AddField(
-            model_name="transfermoneylog",
-            name="created_at",
+            model_name='transfermoneylog',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
     ]

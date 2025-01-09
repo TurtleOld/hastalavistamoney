@@ -34,10 +34,7 @@ def calculate_annuity_loan(
 
     monthly_payment = (
         float(loan_amount)
-        * (
-            monthly_interest_rate
-            * (1 + monthly_interest_rate) ** float(period_loan)
-        )
+        * (monthly_interest_rate * (1 + monthly_interest_rate) ** float(period_loan))
         / ((1 + monthly_interest_rate) ** float(period_loan) - 1)
     )
 

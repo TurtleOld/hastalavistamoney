@@ -5,29 +5,29 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("receipts", "0012_alter_product_quantity"),
+        ('receipts', '0012_alter_product_quantity'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="customer",
-            name="created_at",
+            model_name='customer',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
         migrations.AddField(
-            model_name="product",
-            name="created_at",
+            model_name='product',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
         migrations.AddField(
-            model_name="receipt",
-            name="created_at",
+            model_name='receipt',
+            name='created_at',
             field=models.DateTimeField(
-                auto_now_add=True, null=True, verbose_name="Date created"
+                auto_now_add=True, null=True, verbose_name='Date created'
             ),
         ),
     ]

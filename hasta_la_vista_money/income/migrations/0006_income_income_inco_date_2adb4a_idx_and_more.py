@@ -5,26 +5,20 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("income", "0005_alter_income_user"),
+        ('income', '0005_alter_income_user'),
     ]
 
     operations = [
         migrations.AddIndex(
-            model_name="income",
-            index=models.Index(
-                fields=["-date"], name="income_inco_date_2adb4a_idx"
-            ),
+            model_name='income',
+            index=models.Index(fields=['-date'], name='income_inco_date_2adb4a_idx'),
         ),
         migrations.AddIndex(
-            model_name="income",
-            index=models.Index(
-                fields=["amount"], name="income_inco_amount_358474_idx"
-            ),
+            model_name='income',
+            index=models.Index(fields=['amount'], name='income_inco_amount_358474_idx'),
         ),
         migrations.AddIndex(
-            model_name="incometype",
-            index=models.Index(
-                fields=["name"], name="income_inco_name_19eb49_idx"
-            ),
+            model_name='incometype',
+            index=models.Index(fields=['name'], name='income_inco_name_19eb49_idx'),
         ),
     ]

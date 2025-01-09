@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -28,9 +27,7 @@ class Migration(migrations.Migration):
                 ('name_seller', models.CharField(max_length=255)),
                 (
                     'retail_place_address',
-                    models.CharField(
-                        default='Нет данных', max_length=1000, null=True
-                    ),
+                    models.CharField(default='Нет данных', max_length=1000, null=True),
                 ),
                 (
                     'retail_place',
@@ -61,21 +58,15 @@ class Migration(migrations.Migration):
                 ),
                 (
                     'price',
-                    models.DecimalField(
-                        decimal_places=2, default=0, max_digits=10
-                    ),
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
                 ),
                 (
                     'quantity',
-                    models.DecimalField(
-                        decimal_places=2, default=0, max_digits=10
-                    ),
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
                 ),
                 (
                     'amount',
-                    models.DecimalField(
-                        decimal_places=2, default=0, max_digits=10
-                    ),
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
                 ),
                 (
                     'nds_type',
@@ -122,9 +113,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     'total_sum',
-                    models.DecimalField(
-                        decimal_places=2, default=0, max_digits=10
-                    ),
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
                 ),
                 (
                     'account',

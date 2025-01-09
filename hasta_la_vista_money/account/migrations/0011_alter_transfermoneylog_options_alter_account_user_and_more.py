@@ -10,34 +10,34 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("account", "0010_alter_account_balance_alter_transfermoneylog_amount"),
+        ('account', '0010_alter_account_balance_alter_transfermoneylog_amount'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="transfermoneylog",
-            options={"ordering": ["-exchange_date"]},
+            name='transfermoneylog',
+            options={'ordering': ['-exchange_date']},
         ),
         migrations.AlterField(
-            model_name="account",
-            name="user",
+            model_name='account',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="account_users",
+                related_name='account_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="transfermoneylog",
-            name="exchange_date",
+            model_name='transfermoneylog',
+            name='exchange_date',
             field=models.DateTimeField(default=datetime.datetime.now),
         ),
         migrations.AlterField(
-            model_name="transfermoneylog",
-            name="user",
+            model_name='transfermoneylog',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="transfer_money",
+                related_name='transfer_money',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

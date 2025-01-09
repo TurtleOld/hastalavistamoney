@@ -5,17 +5,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("users", "0005_alter_user_email"),
+        ('users', '0005_alter_user_email'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="user",
-            name="email_verify",
+            model_name='user',
+            name='email_verify',
         ),
         migrations.AlterField(
-            model_name="user",
-            name="policy",
+            model_name='user',
+            name='policy',
             field=models.BooleanField(null=True, unique=True),
         ),
     ]

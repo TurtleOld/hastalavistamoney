@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('receipts', '0003_alter_customer_retail_place_and_more'),
     ]

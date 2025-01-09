@@ -8,44 +8,44 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("account", "0005_alter_transfermoneylog_from_account_and_more"),
-        ("loan", "0006_delete_paymentmakeloan"),
+        ('account', '0005_alter_transfermoneylog_from_account_and_more'),
+        ('loan', '0006_delete_paymentmakeloan'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="PaymentMakeLoan",
+            name='PaymentMakeLoan',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("date", models.DateTimeField()),
+                ('date', models.DateTimeField()),
                 (
-                    "amount",
+                    'amount',
                     models.DecimalField(decimal_places=2, max_digits=250),
                 ),
                 (
-                    "account",
+                    'account',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        to="account.account",
+                        to='account.account',
                     ),
                 ),
                 (
-                    "loan",
+                    'loan',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        to="loan.loan",
+                        to='loan.loan',
                     ),
                 ),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
                         to=settings.AUTH_USER_MODEL,

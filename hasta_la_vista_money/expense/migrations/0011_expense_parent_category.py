@@ -6,19 +6,19 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("expense", "0010_rename_expensetype_category_and_more"),
+        ('expense', '0010_rename_expensetype_category_and_more'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="expense",
-            name="parent_category",
+            model_name='expense',
+            name='parent_category',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="subcategories",
-                to="expense.expense",
+                related_name='subcategories',
+                to='expense.expense',
             ),
         ),
     ]

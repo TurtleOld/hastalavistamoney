@@ -6,34 +6,34 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("expense", "0015_expensecategory_parent_category"),
+        ('expense', '0015_expensecategory_parent_category'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="ParentCategoryExpense",
+            name='ParentCategoryExpense',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("name", models.CharField(max_length=250, unique=True)),
+                ('name', models.CharField(max_length=250, unique=True)),
             ],
         ),
         migrations.AddField(
-            model_name="expensecategory",
-            name="parent_category_self",
+            model_name='expensecategory',
+            name='parent_category_self',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.SET_NULL,
-                related_name="subcategories",
-                to="expense.parentcategoryexpense",
+                related_name='subcategories',
+                to='expense.parentcategoryexpense',
             ),
         ),
     ]

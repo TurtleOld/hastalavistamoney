@@ -7,17 +7,17 @@ from django.db import migrations
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("expense", "0013_remove_category_parent_category"),
+        ('expense', '0013_remove_category_parent_category'),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name="Category",
-            new_name="ExpenseCategory",
+            old_name='Category',
+            new_name='ExpenseCategory',
         ),
         migrations.RenameIndex(
-            model_name="expensecategory",
-            new_name="expense_exp_name_f951bb_idx",
-            old_name="expense_cat_name_57748a_idx",
+            model_name='expensecategory',
+            new_name='expense_exp_name_f951bb_idx',
+            old_name='expense_cat_name_57748a_idx',
         ),
     ]

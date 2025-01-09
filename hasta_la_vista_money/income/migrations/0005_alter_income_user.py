@@ -8,13 +8,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("income", "0004_alter_income_user"),
+        ('income', '0004_alter_income_user'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="income",
-            name="user",
+            model_name='income',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
                 to=settings.AUTH_USER_MODEL,

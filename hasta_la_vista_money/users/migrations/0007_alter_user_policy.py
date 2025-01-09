@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("users", "0006_remove_user_email_verify_alter_user_policy"),
+        ('users', '0006_remove_user_email_verify_alter_user_policy'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="user",
-            name="policy",
+            model_name='user',
+            name='policy',
             field=models.BooleanField(null=True),
         ),
     ]

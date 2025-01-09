@@ -5,12 +5,12 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("income", "0017_incomecategory_parent_category"),
+        ('income', '0017_incomecategory_parent_category'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="incomecategory",
-            name="parent_category",
+            model_name='incomecategory',
+            name='parent_category',
         ),
     ]

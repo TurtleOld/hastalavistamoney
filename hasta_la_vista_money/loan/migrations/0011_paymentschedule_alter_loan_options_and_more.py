@@ -8,80 +8,78 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("loan", "0010_alter_paymentmakeloan_loan"),
+        ('loan', '0010_alter_paymentmakeloan_loan'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="PaymentSchedule",
+            name='PaymentSchedule',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("date", models.DateTimeField()),
+                ('date', models.DateTimeField()),
                 (
-                    "balance",
+                    'balance',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "monthly_payment",
+                    'monthly_payment',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "interest",
+                    'interest',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "principal_payment",
+                    'principal_payment',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
             ],
         ),
         migrations.AlterModelOptions(
-            name="loan",
-            options={"ordering": ["-date"]},
+            name='loan',
+            options={'ordering': ['-date']},
         ),
         migrations.AddIndex(
-            model_name="loan",
+            model_name='loan',
+            index=models.Index(fields=['-date'], name='loan_loan_date_cd9119_idx'),
+        ),
+        migrations.AddIndex(
+            model_name='loan',
             index=models.Index(
-                fields=["-date"], name="loan_loan_date_cd9119_idx"
+                fields=['loan_amount'], name='loan_loan_loan_am_4dd1a2_idx'
             ),
         ),
         migrations.AddIndex(
-            model_name="loan",
+            model_name='loan',
             index=models.Index(
-                fields=["loan_amount"], name="loan_loan_loan_am_4dd1a2_idx"
+                fields=['annual_interest_rate'],
+                name='loan_loan_annual__c669ae_idx',
             ),
         ),
         migrations.AddIndex(
-            model_name="loan",
+            model_name='loan',
             index=models.Index(
-                fields=["annual_interest_rate"],
-                name="loan_loan_annual__c669ae_idx",
-            ),
-        ),
-        migrations.AddIndex(
-            model_name="loan",
-            index=models.Index(
-                fields=["period_loan"], name="loan_loan_period__f18127_idx"
+                fields=['period_loan'], name='loan_loan_period__f18127_idx'
             ),
         ),
         migrations.AddField(
-            model_name="paymentschedule",
-            name="loan",
+            model_name='paymentschedule',
+            name='loan',
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.PROTECT, to="loan.loan"
+                on_delete=django.db.models.deletion.PROTECT, to='loan.loan'
             ),
         ),
         migrations.AddField(
-            model_name="paymentschedule",
-            name="user",
+            model_name='paymentschedule',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
                 to=settings.AUTH_USER_MODEL,

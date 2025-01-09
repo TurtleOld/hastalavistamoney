@@ -14,45 +14,45 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Planning",
+            name='Planning',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="budget_category_users",
+                        related_name='budget_category_users',
                         to=settings.AUTH_USER_MODEL,
                     ),
                 ),
             ],
         ),
         migrations.CreateModel(
-            name="DateList",
+            name='DateList',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("date", models.DateTimeField()),
+                ('date', models.DateTimeField()),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
-                        related_name="budget_date_list_users",
+                        related_name='budget_date_list_users',
                         to=settings.AUTH_USER_MODEL,
                     ),
                 ),

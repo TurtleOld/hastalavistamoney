@@ -6,19 +6,19 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("income", "0020_alter_incomecategory_options_and_more"),
+        ('income', '0020_alter_incomecategory_options_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="incomecategory",
-            name="parent_category",
+            model_name='incomecategory',
+            name='parent_category',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="subcategories",
-                to="income.incomecategory",
+                related_name='subcategories',
+                to='income.incomecategory',
             ),
         ),
     ]

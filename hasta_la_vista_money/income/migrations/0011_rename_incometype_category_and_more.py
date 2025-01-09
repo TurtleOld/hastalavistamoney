@@ -7,17 +7,17 @@ from django.db import migrations
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("income", "0010_alter_incometype_user"),
+        ('income', '0010_alter_incometype_user'),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name="IncomeType",
-            new_name="Category",
+            old_name='IncomeType',
+            new_name='Category',
         ),
         migrations.RenameIndex(
-            model_name="category",
-            new_name="income_cate_name_936c6c_idx",
-            old_name="income_inco_name_19eb49_idx",
+            model_name='category',
+            new_name='income_cate_name_936c6c_idx',
+            old_name='income_inco_name_19eb49_idx',
         ),
     ]

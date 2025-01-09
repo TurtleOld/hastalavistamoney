@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
@@ -28,9 +27,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     'balance',
-                    models.DecimalField(
-                        decimal_places=2, default=0, max_digits=10
-                    ),
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
                 ),
                 (
                     'currency',

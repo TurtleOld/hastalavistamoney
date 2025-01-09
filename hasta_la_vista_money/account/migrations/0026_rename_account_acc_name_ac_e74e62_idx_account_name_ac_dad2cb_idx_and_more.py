@@ -4,19 +4,18 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ("account", "0025_account_created_at_transfermoneylog_created_at"),
+        ('account', '0025_account_created_at_transfermoneylog_created_at'),
     ]
 
     operations = [
         migrations.RenameIndex(
-            model_name="account",
-            new_name="account_name_ac_dad2cb_idx",
-            old_name="account_acc_name_ac_e74e62_idx",
+            model_name='account',
+            new_name='account_name_ac_dad2cb_idx',
+            old_name='account_acc_name_ac_e74e62_idx',
         ),
         migrations.AlterModelTable(
-            name="account",
-            table="account",
+            name='account',
+            table='account',
         ),
     ]

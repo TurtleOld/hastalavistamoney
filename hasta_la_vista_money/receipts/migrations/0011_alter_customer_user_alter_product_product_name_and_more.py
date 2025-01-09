@@ -9,68 +9,68 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         (
-            "account",
-            "0011_alter_transfermoneylog_options_alter_account_user_and_more",
+            'account',
+            '0011_alter_transfermoneylog_options_alter_account_user_and_more',
         ),
-        ("receipts", "0010_receipt_receipts_re_receipt_27a810_idx_and_more"),
+        ('receipts', '0010_receipt_receipts_re_receipt_27a810_idx_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="customer",
-            name="user",
+            model_name='customer',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="customer_users",
+                related_name='customer_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="product",
-            name="product_name",
-            field=models.CharField(default="", max_length=1000),
+            model_name='product',
+            name='product_name',
+            field=models.CharField(default='', max_length=1000),
         ),
         migrations.AlterField(
-            model_name="product",
-            name="user",
+            model_name='product',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="product_users",
+                related_name='product_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="receipt",
-            name="account",
+            model_name='receipt',
+            name='account',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="receipt_accounts",
-                to="account.account",
+                related_name='receipt_accounts',
+                to='account.account',
             ),
         ),
         migrations.AlterField(
-            model_name="receipt",
-            name="customer",
+            model_name='receipt',
+            name='customer',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="receipt_customers",
-                to="receipts.customer",
-                verbose_name="customer",
+                related_name='receipt_customers',
+                to='receipts.customer',
+                verbose_name='customer',
             ),
         ),
         migrations.AlterField(
-            model_name="receipt",
-            name="product",
+            model_name='receipt',
+            name='product',
             field=models.ManyToManyField(
-                related_name="receipt_products", to="receipts.product"
+                related_name='receipt_products', to='receipts.product'
             ),
         ),
         migrations.AlterField(
-            model_name="receipt",
-            name="user",
+            model_name='receipt',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="receipt_users",
+                related_name='receipt_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

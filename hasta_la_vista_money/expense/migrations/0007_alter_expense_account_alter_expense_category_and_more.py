@@ -9,37 +9,37 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         (
-            "account",
-            "0011_alter_transfermoneylog_options_alter_account_user_and_more",
+            'account',
+            '0011_alter_transfermoneylog_options_alter_account_user_and_more',
         ),
-        ("expense", "0006_alter_expense_amount"),
+        ('expense', '0006_alter_expense_amount'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="expense",
-            name="account",
+            model_name='expense',
+            name='account',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="expense_accounts",
-                to="account.account",
+                related_name='expense_accounts',
+                to='account.account',
             ),
         ),
         migrations.AlterField(
-            model_name="expense",
-            name="category",
+            model_name='expense',
+            name='category',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="expense_categories",
-                to="expense.expensetype",
+                related_name='expense_categories',
+                to='expense.expensetype',
             ),
         ),
         migrations.AlterField(
-            model_name="expense",
-            name="user",
+            model_name='expense',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="expense_users",
+                related_name='expense_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

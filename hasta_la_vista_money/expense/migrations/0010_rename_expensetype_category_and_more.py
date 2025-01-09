@@ -7,17 +7,17 @@ from django.db import migrations
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("expense", "0009_alter_expensetype_user"),
+        ('expense', '0009_alter_expensetype_user'),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name="ExpenseType",
-            new_name="Category",
+            old_name='ExpenseType',
+            new_name='Category',
         ),
         migrations.RenameIndex(
-            model_name="category",
-            new_name="expense_cat_name_57748a_idx",
-            old_name="expense_exp_name_56543f_idx",
+            model_name='category',
+            new_name='expense_cat_name_57748a_idx',
+            old_name='expense_exp_name_56543f_idx',
         ),
     ]

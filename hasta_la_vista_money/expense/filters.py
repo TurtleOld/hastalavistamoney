@@ -37,9 +37,7 @@ class ExpenseFilter(django_filters.FilterSet):
         self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         self.filters['category'].queryset = (
-            ExpenseCategory.objects.filter(user=self.user)
-            .distinct()
-            .order_by('name')
+            ExpenseCategory.objects.filter(user=self.user).distinct().order_by('name')
         )
         self.filters['account'].queryset = Account.objects.filter(
             user=self.user,

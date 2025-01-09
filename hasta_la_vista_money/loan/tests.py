@@ -1,5 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse_lazy
+
+from hasta_la_vista_money import constants
 from hasta_la_vista_money.loan.models import Loan
 from hasta_la_vista_money.users.models import User
 
@@ -20,5 +22,49 @@ class TestLoan(TestCase):
 
     def test_list_loan(self) -> None:
         self.client.force_login(self.user)
-        response = self.client.get(reverse_lazy('income:list'))
-        self.assertEqual(response.status_code, 200)
+        response = self.client.get(reverse_lazy('loan:list'))
+        self.assertEqual(response.status_code, constants.SUCCESS_CODE)
+
+    def test_create_annuity_loan(self):
+        self.client.force_login(self.user)
+        url = reverse_lazy('loan:create')
+        data = {
+            'type_loan': 'Annuity',
+            'date': '2023-10-01',
+            'loan_amount': 10000,
+            'annual_interest_rate': 5,
+            'period_loan': 12,
+        }
+        response = self.client.post(url, data, follow=True)
+        self.assertEqual(response.status_code, constants.SUCCESS_CODE)
+        self.assertTrue(Loan.objects.filter(loan_amount=10000).exists())
+
+    def test_create_differentiated_loan(self):
+        self.client.force_login(self.user)
+        url = reverse_lazy('loan:create')
+        data = {
+            'type_loan': 'Differentiated',
+            'date': '2023-10-01',
+            'loan_amount': 10000,
+            'annual_interest_rate': 5,
+            'period_loan': 12,
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, constants.REDIRECTS)
+        self.assertTrue(Loan.objects.filter(loan_amount=10000).exists())
+
+    def test_create_loan_invalid_data(self):
+        self.client.force_login(self.user)
+        url = reverse_lazy('loan:create')
+        data = {
+            'type_loan': 'Annuity',
+            'date': '',
+            'loan_amount': 10000,
+            'annual_interest_rate': 5,
+            'period_loan': 12,
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, constants.SUCCESS_CODE)
+        self.assertFormError(
+            response, form='form', field='date', errors='Обязательное поле.'
+        )

@@ -8,16 +8,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("income", "0009_alter_incometype_name"),
+        ('income', '0009_alter_incometype_name'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="incometype",
-            name="user",
+            model_name='incometype',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="category_income_users",
+                related_name='category_income_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

@@ -37,9 +37,7 @@ class IncomeFilter(django_filters.FilterSet):
         self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         self.filters['category'].queryset = (
-            IncomeCategory.objects.filter(user=self.user)
-            .distinct()
-            .order_by('name')
+            IncomeCategory.objects.filter(user=self.user).distinct().order_by('name')
         )
         self.filters['account'].queryset = Account.objects.filter(
             user=self.user,

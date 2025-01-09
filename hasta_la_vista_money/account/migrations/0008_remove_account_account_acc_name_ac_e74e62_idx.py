@@ -5,12 +5,12 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0007_account_account_acc_name_ac_e74e62_idx"),
+        ('account', '0007_account_account_acc_name_ac_e74e62_idx'),
     ]
 
     operations = [
         migrations.RemoveIndex(
-            model_name="account",
-            name="account_acc_name_ac_e74e62_idx",
+            model_name='account',
+            name='account_acc_name_ac_e74e62_idx',
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ("receipts", "0018_delete_fileupload"),
+        ('receipts', '0018_delete_fileupload'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="receipt",
-            name="category",
+            model_name='receipt',
+            name='category',
             field=models.CharField(blank=True, max_length=250),
         ),
     ]

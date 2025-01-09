@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0013_rename_notes_transfermoneylog_note"),
+        ('account', '0013_rename_notes_transfermoneylog_note'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="transfermoneylog",
-            name="note",
+            model_name='transfermoneylog',
+            name='note',
             field=models.TextField(blank=True, null=True),
         ),
     ]

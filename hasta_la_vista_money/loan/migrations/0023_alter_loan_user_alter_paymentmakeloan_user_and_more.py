@@ -8,34 +8,34 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("loan", "0022_alter_loan_user_alter_paymentmakeloan_user_and_more"),
+        ('loan', '0022_alter_loan_user_alter_paymentmakeloan_user_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="loan",
-            name="user",
+            model_name='loan',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="loan_users",
+                related_name='loan_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="paymentmakeloan",
-            name="user",
+            model_name='paymentmakeloan',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="payment_make_loan_users",
+                related_name='payment_make_loan_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="paymentschedule",
-            name="user",
+            model_name='paymentschedule',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="payment_schedule_users",
+                related_name='payment_schedule_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

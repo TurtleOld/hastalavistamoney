@@ -6,28 +6,27 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("budget", "0004_alter_datelist_user"),
+        ('budget', '0004_alter_datelist_user'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="datelist",
-            name="user",
+            model_name='datelist',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="budget_date_list_users",
+                related_name='budget_date_list_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="planning",
-            name="user",
+            model_name='planning',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="budget_category_users",
+                related_name='budget_category_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

@@ -6,19 +6,19 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("income", "0013_remove_category_parent_category"),
+        ('income', '0013_remove_category_parent_category'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="category",
-            name="parent_category",
+            model_name='category',
+            name='parent_category',
             field=models.ForeignKey(
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="subcategories",
-                to="income.category",
+                related_name='subcategories',
+                to='income.category',
             ),
         ),
     ]

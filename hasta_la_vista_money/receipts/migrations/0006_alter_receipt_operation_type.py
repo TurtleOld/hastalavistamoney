@@ -5,20 +5,20 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("receipts", "0005_alter_customer_retail_place_and_more"),
+        ('receipts', '0005_alter_customer_retail_place_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="receipt",
-            name="operation_type",
+            model_name='receipt',
+            name='operation_type',
             field=models.IntegerField(
                 blank=True,
                 choices=[
-                    (1, "Покупка"),
-                    (2, "Возврат средств за покупку"),
-                    (3, "Продажа\\Выигрыш"),
-                    (4, "Возврат выигрыша или продажи"),
+                    (1, 'Покупка'),
+                    (2, 'Возврат средств за покупку'),
+                    (3, 'Продажа\\Выигрыш'),
+                    (4, 'Возврат выигрыша или продажи'),
                 ],
                 default=0,
                 null=True,

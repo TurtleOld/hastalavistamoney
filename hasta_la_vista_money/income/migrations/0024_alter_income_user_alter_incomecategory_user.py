@@ -6,28 +6,27 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("income", "0023_alter_income_user_alter_incomecategory_user"),
+        ('income', '0023_alter_income_user_alter_incomecategory_user'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="income",
-            name="user",
+            model_name='income',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="income_users",
+                related_name='income_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AlterField(
-            model_name="incomecategory",
-            name="user",
+            model_name='incomecategory',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                related_name="category_income_users",
+                related_name='category_income_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

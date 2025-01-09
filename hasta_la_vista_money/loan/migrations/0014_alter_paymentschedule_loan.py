@@ -6,15 +6,15 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0013_alter_paymentmakeloan_account_and_more"),
+        ('loan', '0013_alter_paymentmakeloan_account_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="paymentschedule",
-            name="loan",
+            model_name='paymentschedule',
+            name='loan',
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="loan.loan"
+                on_delete=django.db.models.deletion.CASCADE, to='loan.loan'
             ),
         ),
     ]

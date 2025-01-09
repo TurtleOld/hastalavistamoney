@@ -5,12 +5,12 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0005_alter_transfermoneylog_from_account_and_more"),
+        ('account', '0005_alter_transfermoneylog_from_account_and_more'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="account",
-            options={"ordering": ["name_account"]},
+            name='account',
+            options={'ordering': ['name_account']},
         ),
     ]

@@ -5,20 +5,20 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0011_paymentschedule_alter_loan_options_and_more"),
+        ('loan', '0011_paymentschedule_alter_loan_options_and_more'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="loan",
-            options={"ordering": ["-id"]},
+            name='loan',
+            options={'ordering': ['-id']},
         ),
         migrations.RemoveIndex(
-            model_name="loan",
-            name="loan_loan_date_cd9119_idx",
+            model_name='loan',
+            name='loan_loan_date_cd9119_idx',
         ),
         migrations.AddIndex(
-            model_name="loan",
-            index=models.Index(fields=["-id"], name="loan_loan_id_bf4de1_idx"),
+            model_name='loan',
+            index=models.Index(fields=['-id'], name='loan_loan_id_bf4de1_idx'),
         ),
     ]

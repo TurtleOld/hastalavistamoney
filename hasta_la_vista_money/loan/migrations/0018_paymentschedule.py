@@ -8,48 +8,48 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("loan", "0017_delete_paymentschedule"),
+        ('loan', '0017_delete_paymentschedule'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="PaymentSchedule",
+            name='PaymentSchedule',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("date", models.DateTimeField()),
+                ('date', models.DateTimeField()),
                 (
-                    "balance",
+                    'balance',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "monthly_payment",
+                    'monthly_payment',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "interest",
+                    'interest',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "principal_payment",
+                    'principal_payment',
                     models.DecimalField(decimal_places=2, max_digits=60),
                 ),
                 (
-                    "loan",
+                    'loan',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="loan.loan",
+                        to='loan.loan',
                     ),
                 ),
                 (
-                    "user",
+                    'user',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.PROTECT,
                         to=settings.AUTH_USER_MODEL,

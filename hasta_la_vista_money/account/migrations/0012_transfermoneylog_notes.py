@@ -6,15 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         (
-            "account",
-            "0011_alter_transfermoneylog_options_alter_account_user_and_more",
+            'account',
+            '0011_alter_transfermoneylog_options_alter_account_user_and_more',
         ),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="transfermoneylog",
-            name="notes",
+            model_name='transfermoneylog',
+            name='notes',
             field=models.TextField(default=1),
             preserve_default=False,
         ),

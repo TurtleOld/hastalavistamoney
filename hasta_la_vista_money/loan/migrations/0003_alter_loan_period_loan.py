@@ -5,13 +5,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("loan", "0002_remove_loan_category_delete_category"),
+        ('loan', '0002_remove_loan_category_delete_category'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="loan",
-            name="period_loan",
+            model_name='loan',
+            name='period_loan',
             field=models.IntegerField(max_length=250),
         ),
     ]

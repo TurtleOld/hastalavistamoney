@@ -8,17 +8,17 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("account", "0021_remove_transfermoneylog_user"),
+        ('account', '0021_remove_transfermoneylog_user'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="transfermoneylog",
-            name="user",
+            model_name='transfermoneylog',
+            name='user',
             field=models.ForeignKey(
                 default=1,
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="transfer_money",
+                related_name='transfer_money',
                 to=settings.AUTH_USER_MODEL,
             ),
             preserve_default=False,

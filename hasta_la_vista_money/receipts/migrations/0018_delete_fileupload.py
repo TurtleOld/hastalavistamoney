@@ -4,13 +4,12 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ("receipts", "0017_fileupload"),
+        ('receipts', '0017_fileupload'),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name="FileUpload",
+            name='FileUpload',
         ),
     ]

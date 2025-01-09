@@ -8,16 +8,16 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("budget", "0002_datelist_created_at_planning_created_at"),
+        ('budget', '0002_datelist_created_at_planning_created_at'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="planning",
-            name="user",
+            model_name='planning',
+            name='user',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="budget_category_users",
+                related_name='budget_category_users',
                 to=settings.AUTH_USER_MODEL,
             ),
         ),

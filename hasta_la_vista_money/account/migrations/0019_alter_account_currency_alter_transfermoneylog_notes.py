@@ -5,29 +5,29 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("account", "0018_alter_transfermoneylog_notes"),
+        ('account', '0018_alter_transfermoneylog_notes'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="account",
-            name="currency",
+            model_name='account',
+            name='currency',
             field=models.CharField(
                 choices=[
-                    ("RUB", "Российский рубль"),
-                    ("USD", "Доллар США"),
-                    ("EUR", "Евро"),
-                    ("GBP", "Британский фунт"),
-                    ("CZK", "Чешская крона"),
-                    ("PLN", "Польский злотый"),
-                    ("TRY", "Турецкая лира"),
-                    ("CNH", "Китайский юань"),
+                    ('RUB', 'Российский рубль'),
+                    ('USD', 'Доллар США'),
+                    ('EUR', 'Евро'),
+                    ('GBP', 'Британский фунт'),
+                    ('CZK', 'Чешская крона'),
+                    ('PLN', 'Польский злотый'),
+                    ('TRY', 'Турецкая лира'),
+                    ('CNH', 'Китайский юань'),
                 ]
             ),
         ),
         migrations.AlterField(
-            model_name="transfermoneylog",
-            name="notes",
+            model_name='transfermoneylog',
+            name='notes',
             field=models.TextField(blank=True, default=1),
             preserve_default=False,
         ),
