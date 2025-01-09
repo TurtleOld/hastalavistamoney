@@ -101,7 +101,6 @@ class ExpenseView(
 
             expenses = expense_filter.qs
 
-            # Paginator expense table
             pages_expense = paginator_custom_view(
                 self.request,
                 expenses,
