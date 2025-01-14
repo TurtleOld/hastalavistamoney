@@ -21,6 +21,9 @@ services:
   hlvm-server:
     container_name: hlvm_server
     image: ghcr.io/turtleold/hasta-la-vista-money:main
+    build:
+      context: ./
+      dockerfile: docker/production.Dockerfile
     volumes:
       - ${LOCATION:-./app_data}:/app
     command: sh -c "python manage.py migrate && python manage.py collectstatic && daphne config.asgi:application --port ${PORT:-8090} --bind 0.0.0.0 -v2"
