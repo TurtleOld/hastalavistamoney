@@ -168,6 +168,10 @@ td {
     padding-bottom: .55rem;
 }
 
+table {
+    caption-side: top;
+}
+
 
 @import "account";
 @import "buttons";
