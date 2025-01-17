@@ -4,9 +4,16 @@ This section is dedicated to helping you join our project. Whether you're an exp
 
 If you have any questions or need assistance getting started, don't hesitate to ask. We're always happy to collaborate with you!
 
+## First steps
+
+1. Fork [our repo](https://github.com/TurtleOld/hasta-la-vista-money.git), here's the [guide on forking](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+2. [Clone your new repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) (forked repo) to have a local copy of the code
+3. Apply the required changes.
+4. Send a Pull Request to our original repo. Here's [the helpful guide](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) on how to do that
+
 ## Installation and launch of the application
 
-You can launch the application using either Poetry.
+Use Poetry to manage dependencies.
 
 To install **Poetry**, run the following command:
 
@@ -81,4 +88,22 @@ make install
 
 ``` bash
 make start
+```
+
+## 3. Test code
+
+```commandline
+make test
+```
+
+## 4. Linting
+
+```commandline
+make lint
+```
+
+## 5. Formating code
+Before pushing the code to the remote repository, format it according to the guidelines:
+```commandline
+make format
 ```
