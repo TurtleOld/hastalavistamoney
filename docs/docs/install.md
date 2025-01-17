@@ -102,7 +102,7 @@ make test
 make lint
 ```
 
-## 5. Formating code
+## 5. Formatting code
 Before pushing the code to the remote repository, format it according to the guidelines:
 ```commandline
 make format
