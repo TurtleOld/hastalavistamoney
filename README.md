@@ -19,15 +19,15 @@ ___
 ## Installation  
 
 The application is deployed using [Docker](https://docs.docker.com/desktop/setup/install/linux/). You can deploy it on your local machine or a server.
-___
 
 In the directory where the project files will reside, create a _.env_ file and populate it with the following details:
 
-SECRET_KEY - Key for the settings.py file. You can generate the key using the command - ```base64 /dev/urandom | head -c50```
+SECRET_KEY - Key for the settings.py file.  
+You can generate the key using the command - ```base64 /dev/urandom | head -c50```
 
 > SECRET_KEY=
 
-DEBUG - Debugging activation. Do not enable on a production server.
+DEBUG - Debugging activation. **Do not enable on a production server**.
 Set one of the following values: true, 1, yes.
 
 > DEBUG=
@@ -42,7 +42,6 @@ ALLOWED_HOSTS - List of allowed hosts. Example 'localhost',
 
 > ALLOWED_HOSTS=  
 
-___
 
 Download the [docker-compose.yaml](https://github.com/TurtleOld/hasta-la-vista-money/releases/download/v1.4.0/docker-compose.yaml) file and place it in your directory. This file is a sample and serves as a basic template for launching the application. Feel free to modify it as you see fit.
 
