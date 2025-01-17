@@ -37,4 +37,5 @@ Next, start the application using the command below:
 ```commandline
 docker compose up -d
 ```
-The application will launch in the background. If there are no errors after running the command, open your browser and go to http://127.0.0.1:8090.
+The application will launch in the background. If there are no errors after running the command, open your browser and go to http://127.0.0.1:8090.  
+Upon the first launch of the website, a registration page will open for creating an administrator account.
